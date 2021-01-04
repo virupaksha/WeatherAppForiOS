@@ -9,9 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var viewModel:WeatherInfoViewModel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        viewModel = WeatherInfoViewModel()
+        viewModel.fetchWeatherInfoByCity(cityName: "Cologne")
+        
+        viewModel.weatherInfoAfterQuery = {
+            
+        }
     }
 
 
